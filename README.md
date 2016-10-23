@@ -12,7 +12,11 @@ For now, sample images are created using the fit command.
     cd fit
     go run main.go
 
+One of the examples generated from fit is complex.png:
+
 <img src="doc/complex.png?raw=true" />
+
+To pack images (or just plain ol' rectangles), the code is as simple as this:
 
 ```go
 package main
@@ -38,10 +42,11 @@ func main() {
 }
 ```
 
-    $ cd example
-    $ go run main.go
+To run this program:
 
 ````
+$ cd example
+$ go run main.go
 |========== Canvas {80 x 70} ==========|
 |    {{0, 0} {20 x 70}}
 |    {{20, 0} {60 x 5}}
@@ -60,7 +65,8 @@ images in 4 different ways by sorting the images differently:
 * sort by max side (width or height)
 
 By changing the sort order of the images, an occasional advantage can
-be realized.
+be realized.  Each algorithm is attempted and the empty space is
+calculated.  The algorithm that generates the least empty space wins.
 
 For example:
 
